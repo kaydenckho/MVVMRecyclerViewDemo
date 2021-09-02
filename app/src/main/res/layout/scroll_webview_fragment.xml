@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/scrolltext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Nested ScrollView"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <com.example.myapplication.adapter.TouchyWebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="testing button"
+            android:textSize="26dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Nested ScrollView"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="testing button"
+            android:textSize="26dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Nested ScrollView"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="testing button"
+            android:textSize="26dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Nested ScrollView"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="testing button"
+            android:textSize="26dp" />
+
+        <com.example.myapplication.adapter.TouchyWebView
+            android:id="@+id/webView2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Nested ScrollView"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="testing button"
+            android:textSize="26dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Nested ScrollView"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

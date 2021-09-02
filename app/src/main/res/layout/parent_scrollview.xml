@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:scrollbars="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/scrolltext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Testing ScrollView"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@id/horizontal_scrollview"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontal_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"
+            android:padding="40dp"
+            android:scrollbars="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/scrolltext">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="testing1"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="testing2"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="testing3"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="testing4"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="testing5"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="testing6"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="testing7"
+                    android:textSize="36sp" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Child_RV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_scrollview" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Child_RV2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:layout_marginVertical="30dp"
+            app:layout_constraintTop_toBottomOf="@id/Child_RV" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Child_RV3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:layout_marginVertical="30dp"
+            app:layout_constraintTop_toBottomOf="@id/Child_RV2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Child_RV4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="30dp"
+            android:scrollbars="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/Child_RV3" />
+
+
+    <Button
+        android:id="@+id/useless_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="This button has no function"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Child_RV4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout></androidx.core.widget.NestedScrollView>
