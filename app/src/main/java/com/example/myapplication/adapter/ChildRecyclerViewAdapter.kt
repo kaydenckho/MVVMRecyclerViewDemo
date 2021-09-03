@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.model.Data
 import com.example.myapplication.view.WebViewActivity
@@ -45,16 +46,13 @@ class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
     ): ChildRecyclerViewAdapter.ViewHolder {
         val context = parent.context
         this.context = context
-        // Inflate the custom layout
         val view = LayoutInflater.from(context).inflate(R.layout.recyclerview_item, parent, false)
-        // Return a new holder instance
         return ViewHolder(view)
     }
 
     // Involves populating data into the item through holder
     @SuppressLint("ClickableViewAccessibility", "UseCompatLoadingForDrawables")
     override fun onBindViewHolder(viewHolder: ChildRecyclerViewAdapter.ViewHolder, position: Int) {
-
         fun gotoWebView(url: String?) {
             val intent = Intent(context, WebViewActivity::class.java)
             intent.putExtra("programUrl", url)
@@ -77,16 +75,14 @@ class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
         imageView.setImageURI(data.imageUrl)
         val btnView = viewHolder.btnView
         viewHolder.btnView.setOnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN){
+            if (event.action == MotionEvent.ACTION_DOWN) {
                 btnView.startAnimation(scale_up)
                 btnView.background = context.getDrawable(R.drawable.mybutton_pressed)
-            }
-            else if (event.action == MotionEvent.ACTION_UP){
+            } else if (event.action == MotionEvent.ACTION_UP) {
                 btnView.startAnimation(scale_down)
                 gotoWebView(mData[position].programUrl)
                 btnView.background = context.getDrawable(R.drawable.mybutton)
-            }
-            else if (event.action == MotionEvent.ACTION_CANCEL){
+            } else if (event.action == MotionEvent.ACTION_CANCEL) {
                 btnView.startAnimation(scale_down)
                 btnView.background = context.getDrawable(R.drawable.mybutton)
             }
@@ -98,5 +94,4 @@ class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
     override fun getItemCount(): Int {
         return mData.size
     }
-
 }

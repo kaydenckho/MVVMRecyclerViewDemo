@@ -20,8 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.WebViewActivity"/>
-        <activity android:name=".view.abc"/>
-        
     </application>
 
 </manifest>

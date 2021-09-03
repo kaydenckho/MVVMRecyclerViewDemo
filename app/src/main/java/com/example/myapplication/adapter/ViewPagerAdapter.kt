@@ -1,5 +1,6 @@
 package com.example.myapplication.adapter
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -8,15 +9,14 @@ import com.example.myapplication.model.Data
 import com.example.myapplication.view.ListingFragment
 import com.example.myapplication.view.ScrollViewFragment
 import com.example.myapplication.view.WebViewFragment
-import android.os.Bundle
 
-class ViewPagerAdapter(fa: FragmentActivity, val viewPager: ViewPager2) : FragmentStateAdapter(fa){
+class ViewPagerAdapter(fa: FragmentActivity, val viewPager: ViewPager2) : FragmentStateAdapter(fa) {
 
     var mList: ArrayList<Data> = ArrayList()
-    var numPages : Int = 0
+    var numPages: Int = 0
 
-    override fun createFragment(position: Int): Fragment{
-        when (position){
+    override fun createFragment(position: Int): Fragment {
+        when (position) {
             1 -> return ScrollViewFragment(mList, viewPager)
             2 -> {
                 val args = Bundle()

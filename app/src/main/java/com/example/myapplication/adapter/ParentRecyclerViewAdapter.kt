@@ -6,16 +6,13 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
+import androidx.recyclerview.widget.SnapHelper
+import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.model.Data
-import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.RecyclerView.*
-
-import androidx.recyclerview.widget.SnapHelper
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
 
 class ParentRecyclerViewAdapter(private val mData: ArrayList<Data>, val viewPager: ViewPager2) :
     RecyclerView.Adapter<ParentRecyclerViewAdapter.ViewHolder>() {
@@ -62,13 +59,13 @@ class ParentRecyclerViewAdapter(private val mData: ArrayList<Data>, val viewPage
                 rv: RecyclerView,
                 e: MotionEvent
             ): Boolean {
-                println(e.action.toString())
                 when (e.action) {
                     MotionEvent.ACTION_DOWN -> {
                         viewPager2.isUserInputEnabled = false
                     }
                     MotionEvent.ACTION_MOVE -> {
-                        viewPager2.isUserInputEnabled = !rv.canScrollHorizontally(FOCUS_FORWARD)
+                        viewPager2.isUserInputEnabled =
+                            !(rv.canScrollHorizontally(1) or rv.canScrollHorizontally(-1))
                     }
                     MotionEvent.ACTION_UP -> {
                         viewPager2.isUserInputEnabled = true

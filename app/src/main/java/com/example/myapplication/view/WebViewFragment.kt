@@ -6,16 +6,13 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebSettings
-import android.webkit.WebView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.adapter.TouchyWebView
 
 
-class WebViewFragment(viewPager2: ViewPager2) : Fragment(){
+class WebViewFragment(viewPager2: ViewPager2) : Fragment() {
 
     private val viewPager2 = viewPager2
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +25,8 @@ class WebViewFragment(viewPager2: ViewPager2) : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         val args = arguments
-        val url1 = args!!.getString("url1","")
-        val url2 = args.getString("url2","")
+        val url1 = args!!.getString("url1", "")
+        val url2 = args.getString("url2", "")
         val root = inflater.inflate(R.layout.scroll_webview_fragment, container, false)
         val webView: TouchyWebView = root.findViewById(R.id.webView)
         val webView2: TouchyWebView = root.findViewById(R.id.webView2)
@@ -45,7 +42,7 @@ class WebViewFragment(viewPager2: ViewPager2) : Fragment(){
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    fun setTouchControl(webView: TouchyWebView){
+    fun setTouchControl(webView: TouchyWebView) {
         webView.setOnTouchListener { v, event ->
             when (event?.action) {
                 MotionEvent.ACTION_DOWN -> {

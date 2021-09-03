@@ -7,14 +7,10 @@ import android.net.NetworkCapabilities
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
 import com.example.myapplication.localDatabase.LocalDatabase
 import com.example.myapplication.model.Data
 import com.example.myapplication.network.ApiRepository
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 
 class ViewModelMainActivity(application: Application) : AndroidViewModel(application) {
 

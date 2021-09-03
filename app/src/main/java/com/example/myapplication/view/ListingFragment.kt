@@ -2,25 +2,21 @@ package com.example.myapplication.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ParentRecyclerViewAdapter
 import com.example.myapplication.model.Data
 
 
-class ListingFragment(mList : ArrayList<Data>, val viewPager: ViewPager2) : Fragment(){
+class ListingFragment(mList: ArrayList<Data>, val viewPager: ViewPager2) : Fragment() {
 
-    val list : ArrayList<Data> = mList
+    val list: ArrayList<Data> = mList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
