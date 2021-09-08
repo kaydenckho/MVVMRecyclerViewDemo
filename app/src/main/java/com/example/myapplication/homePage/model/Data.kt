@@ -1,4 +1,4 @@
-package com.example.myapplication.model
+package com.example.myapplication.homePage.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -16,5 +16,5 @@ data class Data(
     val needLocation: Boolean?,
     val shareTitle: String?,
     val shareUrl: String?,
-    val shareRemark: String?,
+    val shareRemark: String?
     )

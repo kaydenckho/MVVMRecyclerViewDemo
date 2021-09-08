@@ -1,4 +1,4 @@
-package com.example.myapplication.viewModel
+package com.example.myapplication.homePage
 
 import android.app.Application
 import android.content.Context
@@ -8,11 +8,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.myapplication.localDatabase.LocalDatabase
-import com.example.myapplication.model.Data
+import com.example.myapplication.homePage.model.Data
 import com.example.myapplication.network.ApiRepository
 import kotlinx.coroutines.flow.collect
 
-class ViewModelMainActivity(application: Application) : AndroidViewModel(application) {
+class HomePageViewModel(application: Application) : AndroidViewModel(application) {
 
     val dataList = MutableLiveData<ArrayList<Data>>()
 

@@ -1,8 +1,7 @@
 package com.example.myapplication.network
 
-import com.example.myapplication.model.Data
+import com.example.myapplication.homePage.model.Data
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flow
 
 class ApiRepository {

@@ -1,14 +1,14 @@
-package com.example.myapplication.adapter
+package com.example.myapplication.homePage.adapter
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.example.myapplication.model.Data
-import com.example.myapplication.view.ListingFragment
-import com.example.myapplication.view.ScrollViewFragment
-import com.example.myapplication.view.WebViewFragment
+import com.example.myapplication.homePage.model.Data
+import com.example.myapplication.homePage.fragment.page1.ListingFragment
+import com.example.myapplication.homePage.fragment.page2.ScrollViewFragment
+import com.example.myapplication.homePage.fragment.page3.WebViewFragment
 
 class ViewPagerAdapter(fa: FragmentActivity, val viewPager: ViewPager2) : FragmentStateAdapter(fa) {
 

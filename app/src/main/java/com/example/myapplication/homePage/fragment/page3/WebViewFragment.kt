@@ -1,20 +1,17 @@
-package com.example.myapplication.view
+package com.example.myapplication.homePage.fragment.page3
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
-import com.example.myapplication.adapter.TouchyWebView
+import com.example.myapplication.homePage.fragment.page3.adapter.TouchyWebView
 
 
-class WebViewFragment(viewPager2: ViewPager2) : Fragment() {
+class WebViewFragment(private val viewPager2: ViewPager2) : Fragment() {
 
-    private val viewPager2 = viewPager2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -40,27 +37,4 @@ class WebViewFragment(viewPager2: ViewPager2) : Fragment() {
         }
         return root
     }
-
-    @SuppressLint("ClickableViewAccessibility")
-    fun setTouchControl(webView: TouchyWebView) {
-        webView.setOnTouchListener { v, event ->
-            when (event?.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    viewPager2.isUserInputEnabled = false
-                }
-                MotionEvent.ACTION_MOVE -> {
-                    viewPager2.isUserInputEnabled = false
-                }
-                MotionEvent.ACTION_UP -> {
-                    viewPager2.isUserInputEnabled = true
-                }
-                else -> {
-                    viewPager2.isUserInputEnabled = true
-                }
-            }
-            v?.onTouchEvent(event) ?: true
-        }
-    }
-
-
 }

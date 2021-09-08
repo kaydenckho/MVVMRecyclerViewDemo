@@ -1,4 +1,4 @@
-package com.example.myapplication.view
+package com.example.myapplication.homePage.fragment.page2
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
-import com.example.myapplication.adapter.ChildRecyclerViewAdapter
-import com.example.myapplication.model.Data
+import com.example.myapplication.homePage.adapter.ChildRecyclerViewAdapter
+import com.example.myapplication.homePage.model.Data
 
 
 class ScrollViewFragment(mList: ArrayList<Data>, val viewPager: ViewPager2) : Fragment() {
@@ -33,7 +33,6 @@ class ScrollViewFragment(mList: ArrayList<Data>, val viewPager: ViewPager2) : Fr
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             adapter = ChildRecyclerViewAdapter(list)
             controlHorizontalScrollingInViewPager2(this, viewPager)
-
         }
         recyclerView2.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -59,14 +58,14 @@ class ScrollViewFragment(mList: ArrayList<Data>, val viewPager: ViewPager2) : Fr
                 rv: RecyclerView,
                 e: MotionEvent
             ): Boolean {
-                println(e.action.toString())
                 when (e.action) {
                     MotionEvent.ACTION_DOWN -> {
                         viewPager2.isUserInputEnabled = false
                     }
                     MotionEvent.ACTION_MOVE -> {
                         viewPager2.isUserInputEnabled =
-                            !rv.canScrollHorizontally(RecyclerView.FOCUS_FORWARD)
+                            !(rv.canScrollHorizontally(1) or rv.canScrollHorizontally(-1)  or rv.canScrollHorizontally(
+                                RecyclerView.FOCUS_FORWARD) or rv.canScrollHorizontally(RecyclerView.FOCUS_BACKWARD))
                     }
                     MotionEvent.ACTION_UP -> {
                         viewPager2.isUserInputEnabled = true

@@ -1,4 +1,4 @@
-package com.example.myapplication.adapter
+package com.example.myapplication.homePage.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,10 +11,9 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
-import com.example.myapplication.model.Data
-import com.example.myapplication.view.WebViewActivity
+import com.example.myapplication.homePage.model.Data
+import com.example.myapplication.homePage.webViewActivity.WebViewActivity
 import com.facebook.drawee.view.SimpleDraweeView
 
 class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
