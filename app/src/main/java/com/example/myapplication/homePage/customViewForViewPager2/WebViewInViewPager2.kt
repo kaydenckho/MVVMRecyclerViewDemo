@@ -1,4 +1,4 @@
-package com.example.myapplication.homePage.fragment.page3.adapter
+package com.example.myapplication.homePage.customViewForViewPager2
 
 import android.content.Context
 import android.util.AttributeSet
@@ -9,7 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.homePage.HomePage
 import kotlin.math.abs
 
-class TouchyWebView : WebView {
+class WebViewInViewPager2 : WebView {
     constructor(context: Context?) : super(context!!) {}
     constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs) {}
     constructor(context: Context?, attrs: AttributeSet?, defStyle: Int) : super(context!!, attrs, defStyle) {}

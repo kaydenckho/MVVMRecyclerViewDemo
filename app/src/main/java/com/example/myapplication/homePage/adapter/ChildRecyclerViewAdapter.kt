@@ -31,10 +31,10 @@ class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Your holder should contain and initialize a member variable
         // for any view that will be set as you render a row
-        val imageIconView: SimpleDraweeView = itemView.findViewById<SimpleDraweeView>(R.id.icon)
-        val nameTextView: TextView = itemView.findViewById<TextView>(R.id.list_name)
-        val ageTextView: TextView = itemView.findViewById<TextView>(R.id.list_age)
-        val btnView: Button = itemView.findViewById<Button>(R.id.view_btn)
+        val imageIconView: SimpleDraweeView = itemView.findViewById(R.id.icon)
+        val nameTextView: TextView = itemView.findViewById(R.id.list_name)
+        val ageTextView: TextView = itemView.findViewById(R.id.list_age)
+        val btnView: Button = itemView.findViewById(R.id.view_btn)
     }
 
     // ... constructor and member variables
@@ -57,11 +57,9 @@ class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
             intent.putExtra("programUrl", url)
             context.startActivity(intent)
         }
-
         viewHolder.itemView.setOnClickListener {
             gotoWebView(mData[position].programUrl)
         }
-
         // Get the data model based on position
         val data: Data = mData[position]
 

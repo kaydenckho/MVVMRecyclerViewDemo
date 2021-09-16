@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
-import com.example.myapplication.homePage.fragment.page3.adapter.TouchyWebView
+import com.example.myapplication.homePage.customViewForViewPager2.WebViewInViewPager2
 
 
 class WebViewFragment(private val viewPager2: ViewPager2) : Fragment() {
@@ -25,13 +25,13 @@ class WebViewFragment(private val viewPager2: ViewPager2) : Fragment() {
         val url1 = args!!.getString("url1", "")
         val url2 = args.getString("url2", "")
         val root = inflater.inflate(R.layout.scroll_webview_fragment, container, false)
-        val webView: TouchyWebView = root.findViewById(R.id.webView)
-        val webView2: TouchyWebView = root.findViewById(R.id.webView2)
-        webView.apply {
+        val webViewInViewPager2: WebViewInViewPager2 = root.findViewById(R.id.webView)
+        val webViewInViewPager22: WebViewInViewPager2 = root.findViewById(R.id.webView2)
+        webViewInViewPager2.apply {
             loadUrl(url1)
             settings.javaScriptEnabled = true
         }
-        webView2.apply {
+        webViewInViewPager22.apply {
             loadUrl(url2)
             settings.javaScriptEnabled = true
         }

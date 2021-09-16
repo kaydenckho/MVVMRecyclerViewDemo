@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.homePage.adapter.ParentRecyclerViewAdapter
-import com.example.myapplication.homePage.adapter.RowType
 import com.example.myapplication.homePage.model.Data
 
 
@@ -23,14 +22,14 @@ class ListingFragment(mList: ArrayList<Data>, val viewPager: ViewPager2) : Fragm
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-            val root = inflater.inflate(R.layout.parent_recyclerview, container, false)
-            val recyclerView: RecyclerView = root.findViewById(R.id.recycler_view)
-            recyclerView.apply {
-                layoutManager = LinearLayoutManager(context)
-                val divider = DividerItemDecoration(context, resources.configuration.orientation)
-                addItemDecoration(divider)
-                adapter = ParentRecyclerViewAdapter(list, viewPager)
-            }
-            return root
+        val root = inflater.inflate(R.layout.parent_recyclerview, container, false)
+        val recyclerView: RecyclerView = root.findViewById(R.id.recycler_view)
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            val divider = DividerItemDecoration(context, resources.configuration.orientation)
+            addItemDecoration(divider)
+            adapter = ParentRecyclerViewAdapter(list, viewPager)
+        }
+        return root
     }
 }
