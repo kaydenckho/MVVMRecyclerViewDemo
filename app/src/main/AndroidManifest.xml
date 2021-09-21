@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +20,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.example.myapplication.homePage.webViewActivity.WebViewActivity"/>
+        <activity
+            android:name="com.example.myapplication.homePage.webViewActivity.WebViewActivity"
+            android:allowTaskReparenting="true"
+            android:alwaysRetainTaskState="true"
+            android:autoRemoveFromRecents="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:taskAffinity=".PIPActivity" />
     </application>
 
 </manifest>
