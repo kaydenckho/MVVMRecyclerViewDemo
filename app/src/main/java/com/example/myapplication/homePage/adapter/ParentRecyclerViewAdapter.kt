@@ -59,6 +59,7 @@ class ParentRecyclerViewAdapter(val mData: ArrayList<Data>, val viewPager: ViewP
             setHasFixedSize(true)
             adapter = ChildRecyclerViewAdapter(mData)
             val snapHelper: SnapHelper = PagerSnapHelper()
+            isNestedScrollingEnabled = false // disable child recyclerView's control on collapsing toolbar
             onFlingListener = null
             snapHelper.attachToRecyclerView(this)
         }

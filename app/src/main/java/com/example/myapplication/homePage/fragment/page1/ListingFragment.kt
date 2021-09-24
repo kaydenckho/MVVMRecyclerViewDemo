@@ -28,6 +28,7 @@ class ListingFragment(mList: ArrayList<Data>, val viewPager: ViewPager2) : Fragm
             layoutManager = LinearLayoutManager(context)
             val divider = DividerItemDecoration(context, resources.configuration.orientation)
             addItemDecoration(divider)
+            isNestedScrollingEnabled = true // enable parent recyclerView's control on collapsing toolbar
             adapter = ParentRecyclerViewAdapter(list, viewPager)
         }
         return root

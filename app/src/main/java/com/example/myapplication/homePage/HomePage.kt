@@ -2,10 +2,9 @@ package com.example.myapplication.homePage
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
+import androidx.core.view.children
+import androidx.lifecycle.*
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.homePage.adapter.ViewPagerAdapter
@@ -25,16 +24,21 @@ class HomePage : AppCompatActivity() {
     private val context = this
     private var currentPage = 0
     private val viewModel by lazy {
-        ViewModelProvider(this).get(HomePageViewModel::class.java)
+        ViewModelProvider(this)[HomePageViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, HomePageFragment.newInstance())
+                .commitNow()
+        }
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.getImageAsync()
-                viewModel.liveDataList.observe(context, { updatedList ->
+                viewModel.liveDataList.observe(context) { updatedList ->
                     // list to recycler view
                     if (!updatedList.isNullOrEmpty()) {
                         viewPager = findViewById(R.id.fragment1)
@@ -45,7 +49,7 @@ class HomePage : AppCompatActivity() {
                         viewPager.adapter = pagerAdapter
                         viewPager.currentItem = currentPage
                     }
-                })
+                }
                 Fresco.initialize(
                     context,
                     ImagePipelineConfig.newBuilder(context)
