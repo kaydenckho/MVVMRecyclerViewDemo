@@ -1,11 +1,20 @@
-package com.example.myapplication.homePage
+package com.example.myapplication.ui.homePage.activity.mainActivity
 
+import android.app.Activity
+import android.app.PictureInPictureParams
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.DisplayMetrics
+import android.util.Rational
+import android.widget.ImageButton
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.*
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
-import com.example.myapplication.homePage.viewPager.ViewPagerAdapter
+import com.example.myapplication.ui.homePage.fragment.HomePageFragment
+import com.example.myapplication.ui.homePage.adapter.ViewPagerAdapter
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.facebook.imagepipeline.core.ImageTranscoderType
@@ -14,11 +23,12 @@ import kotlinx.coroutines.launch
 
 private const val NUM_PAGES = 5
 
+@RequiresApi(Build.VERSION_CODES.O)
 class HomePage : AppCompatActivity() {
     companion object{
         lateinit var viewPager: ViewPager2
     }
-
+    private val pipBuilder by lazy { PictureInPictureParams.Builder() }
     private val context = this
     private var currentPage = 0
     private val viewModel by lazy {
@@ -29,6 +39,10 @@ class HomePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
+        val pipButton : ImageButton = findViewById(R.id.pipBtn)
+        pipButton.setOnClickListener {
+            pipMode()
+        }
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, HomePageFragment.newInstance())
@@ -72,9 +86,32 @@ class HomePage : AppCompatActivity() {
         }
     }
 
+    override fun onUserLeaveHint() {
+        super.onUserLeaveHint()
+        pipMode()
+    }
+
     override fun onStop() {
         super.onStop()
         currentPage = viewPager.currentItem
+    }
+
+    private fun pipMode() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val startMain = Intent(Intent.ACTION_MAIN)
+            startMain.addCategory(Intent.CATEGORY_HOME)
+            startMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(startMain)
+            val displayMetrics = DisplayMetrics()
+            (context as Activity).windowManager
+                .defaultDisplay
+                .getMetrics(displayMetrics)
+            val height = displayMetrics.heightPixels
+            val width = displayMetrics.widthPixels
+            val aspectRatio = Rational(width, height)
+            pipBuilder.setAspectRatio(aspectRatio).build()
+            enterPictureInPictureMode(pipBuilder.build())
+        }
     }
 
 }

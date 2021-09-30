@@ -1,4 +1,4 @@
-package com.example.myapplication.homePage.webViewActivity
+package com.example.myapplication.ui.homePage.activity.webViewActivity
 
 import android.app.ActivityManager
 import android.app.PictureInPictureParams

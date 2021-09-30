@@ -1,4 +1,4 @@
-package com.example.myapplication.homePage.customViewForViewPager2
+package com.example.myapplication.ui.general.view
 
 import android.content.Context
 import android.util.AttributeSet

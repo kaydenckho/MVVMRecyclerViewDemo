@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.example.myapplication.homePage.customViewForViewPager2.RecyclerViewInViewPager2
+    <com.example.myapplication.ui.general.view.RecyclerViewInViewPager2
         android:id="@+id/Child_RV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

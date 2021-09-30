@@ -13,15 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".homePage.HomePage"
-            android:exported="true">
+        <activity android:name="com.example.myapplication.ui.homePage.activity.mainActivity.HomePage"
+            android:exported="true"
+            android:allowTaskReparenting="true"
+            android:alwaysRetainTaskState="true"
+            android:autoRemoveFromRecents="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:taskAffinity=".PIPActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.myapplication.homePage.webViewActivity.WebViewActivity"
+            android:name="com.example.myapplication.ui.homePage.activity.webViewActivity.WebViewActivity"
             android:allowTaskReparenting="true"
             android:alwaysRetainTaskState="true"
             android:autoRemoveFromRecents="true"

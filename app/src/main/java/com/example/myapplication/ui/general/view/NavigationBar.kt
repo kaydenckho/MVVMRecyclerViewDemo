@@ -1,4 +1,4 @@
-package com.example.myapplication.homePage.behavior
+package com.example.myapplication.ui.general.view
 
 import android.content.Context
 import android.graphics.Color
@@ -10,7 +10,7 @@ import android.widget.RelativeLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.myapplication.R
 
-class NavigationBarBehavior : CoordinatorLayout.Behavior<View> {
+class NavigationBar : CoordinatorLayout.Behavior<View> {
     constructor() {}
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {}
 

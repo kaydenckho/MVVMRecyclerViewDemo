@@ -1,4 +1,4 @@
-package com.example.myapplication.homePage.adapter
+package com.example.myapplication.ui.general.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,8 +12,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.homePage.model.Data
-import com.example.myapplication.homePage.webViewActivity.WebViewActivity
+import com.example.myapplication.ui.homePage.model.Data
+import com.example.myapplication.ui.homePage.activity.webViewActivity.WebViewActivity
 import com.facebook.drawee.view.SimpleDraweeView
 
 class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
@@ -42,7 +42,7 @@ class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ChildRecyclerViewAdapter.ViewHolder {
+    ): ViewHolder {
         val context = parent.context
         this.context = context
         val view = LayoutInflater.from(context).inflate(R.layout.recyclerview_item, parent, false)
@@ -51,7 +51,7 @@ class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :
 
     // Involves populating data into the item through holder
     @SuppressLint("ClickableViewAccessibility", "UseCompatLoadingForDrawables")
-    override fun onBindViewHolder(viewHolder: ChildRecyclerViewAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         fun gotoWebView(url: String?) {
             val intent = Intent(context, WebViewActivity::class.java)
             intent.putExtra("programUrl", url)

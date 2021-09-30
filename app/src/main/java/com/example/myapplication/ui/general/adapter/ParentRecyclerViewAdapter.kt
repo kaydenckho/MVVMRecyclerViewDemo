@@ -1,4 +1,4 @@
-package com.example.myapplication.homePage.adapter
+package com.example.myapplication.ui.general.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
-import com.example.myapplication.homePage.customViewForViewPager2.RecyclerViewInViewPager2
-import com.example.myapplication.homePage.model.Data
+import com.example.myapplication.ui.general.view.RecyclerViewInViewPager2
+import com.example.myapplication.ui.homePage.model.Data
 
 class ParentRecyclerViewAdapter(val mData: ArrayList<Data>, val viewPager: ViewPager2) :
     RecyclerView.Adapter<ParentRecyclerViewAdapter.ViewHolder>() {
@@ -35,7 +35,7 @@ class ParentRecyclerViewAdapter(val mData: ArrayList<Data>, val viewPager: ViewP
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ParentRecyclerViewAdapter.ViewHolder {
+    ): ViewHolder {
         this.context = parent.context
         viewtype = when (viewType){
             TYPE_SCROLLABLE -> 1
@@ -46,7 +46,7 @@ class ParentRecyclerViewAdapter(val mData: ArrayList<Data>, val viewPager: ViewP
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(viewHolder: ParentRecyclerViewAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         viewHolder.childRecyclerView.apply {
             layoutManager = when (viewtype){

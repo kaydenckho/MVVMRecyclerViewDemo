@@ -1,4 +1,4 @@
-package com.example.myapplication.homePage
+package com.example.myapplication.ui.homePage.activity.mainActivity
 
 import android.app.Application
 import android.content.Context
@@ -8,7 +8,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.myapplication.localDatabase.LocalDatabase
-import com.example.myapplication.homePage.model.Data
+import com.example.myapplication.ui.homePage.model.Data
 import com.example.myapplication.network.ApiRepository
 import kotlinx.coroutines.flow.collect
 

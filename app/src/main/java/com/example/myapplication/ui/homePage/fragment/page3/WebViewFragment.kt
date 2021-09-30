@@ -1,4 +1,4 @@
-package com.example.myapplication.homePage.viewPager.page3
+package com.example.myapplication.ui.homePage.fragment.page3
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
-import com.example.myapplication.homePage.customViewForViewPager2.WebViewInViewPager2
+import com.example.myapplication.ui.general.view.WebViewInViewPager2
 
 
 class WebViewFragment(private val viewPager2: ViewPager2) : Fragment() {

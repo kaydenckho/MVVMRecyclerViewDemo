@@ -1,12 +1,11 @@
-package com.example.myapplication.homePage.customViewForViewPager2
+package com.example.myapplication.ui.general.view
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
-
 import android.webkit.WebView
 import androidx.viewpager2.widget.ViewPager2
-import com.example.myapplication.homePage.HomePage
+import com.example.myapplication.ui.homePage.activity.mainActivity.HomePage
 import kotlin.math.abs
 
 class WebViewInViewPager2 : WebView {
