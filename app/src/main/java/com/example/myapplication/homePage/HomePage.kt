@@ -2,12 +2,10 @@ package com.example.myapplication.homePage
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.children
 import androidx.lifecycle.*
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
-import com.example.myapplication.homePage.adapter.ViewPagerAdapter
+import com.example.myapplication.homePage.viewPager.ViewPagerAdapter
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.facebook.imagepipeline.core.ImageTranscoderType
@@ -30,34 +28,35 @@ class HomePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(findViewById(R.id.toolbar))
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, HomePageFragment.newInstance())
                 .commitNow()
-        }
-        lifecycleScope.launch {
-            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.getImageAsync()
-                viewModel.liveDataList.observe(context) { updatedList ->
-                    // list to recycler view
-                    if (!updatedList.isNullOrEmpty()) {
-                        viewPager = findViewById(R.id.fragment1)
-                        val pagerAdapter = ViewPagerAdapter(context, viewPager)
-                        pagerAdapter.setNumPage(NUM_PAGES)
-                        pagerAdapter.setList(updatedList)
-                        viewPager.offscreenPageLimit = 5
-                        viewPager.adapter = pagerAdapter
-                        viewPager.currentItem = currentPage
+            lifecycleScope.launch {
+                lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                    viewModel.getImageAsync()
+                    viewModel.liveDataList.observe(context) { updatedList ->
+                        // list to recycler view
+                        if (!updatedList.isNullOrEmpty()) {
+                            viewPager = findViewById(R.id.fragment1)
+                            val pagerAdapter = ViewPagerAdapter(context, viewPager)
+                            pagerAdapter.setNumPage(NUM_PAGES)
+                            pagerAdapter.setList(updatedList)
+                            viewPager.offscreenPageLimit = 5
+                            viewPager.adapter = pagerAdapter
+                            viewPager.currentItem = currentPage
+                        }
                     }
+                    Fresco.initialize(
+                        context,
+                        ImagePipelineConfig.newBuilder(context)
+                            .setMemoryChunkType(MemoryChunkType.BUFFER_MEMORY)
+                            .setImageTranscoderType(ImageTranscoderType.JAVA_TRANSCODER)
+                            .experiment().setNativeCodeDisabled(true)
+                            .build()
+                    )
                 }
-                Fresco.initialize(
-                    context,
-                    ImagePipelineConfig.newBuilder(context)
-                        .setMemoryChunkType(MemoryChunkType.BUFFER_MEMORY)
-                        .setImageTranscoderType(ImageTranscoderType.JAVA_TRANSCODER)
-                        .experiment().setNativeCodeDisabled(true)
-                        .build()
-                )
             }
         }
     }
