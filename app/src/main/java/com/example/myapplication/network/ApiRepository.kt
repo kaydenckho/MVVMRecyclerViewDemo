@@ -1,6 +1,6 @@
 package com.example.myapplication.network
 
-import com.example.myapplication.ui.homePage.model.Data
+import com.example.myapplication.ui.general.model.Data
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

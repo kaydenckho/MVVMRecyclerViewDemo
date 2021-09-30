@@ -1,7 +1,7 @@
 package com.example.myapplication.localDatabase
 
 import androidx.room.*
-import com.example.myapplication.ui.homePage.model.Data
+import com.example.myapplication.ui.general.model.Data
 
 @Dao
 interface DataDao {

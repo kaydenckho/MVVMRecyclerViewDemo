@@ -1,6 +1,6 @@
 package com.example.myapplication.network
 
-import com.example.myapplication.ui.homePage.model.Data
+import com.example.myapplication.ui.general.model.Data
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

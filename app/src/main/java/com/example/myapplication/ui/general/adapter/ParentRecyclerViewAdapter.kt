@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.SnapHelper
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.ui.general.view.RecyclerViewInViewPager2
-import com.example.myapplication.ui.homePage.model.Data
+import com.example.myapplication.ui.general.model.Data
 
 class ParentRecyclerViewAdapter(val mData: ArrayList<Data>, val viewPager: ViewPager2) :
     RecyclerView.Adapter<ParentRecyclerViewAdapter.ViewHolder>() {

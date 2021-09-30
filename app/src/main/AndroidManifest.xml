@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name="com.example.myapplication.ui.homePage.activity.mainActivity.HomePage"
+        <activity android:name="com.example.myapplication.ui.homePage.activity.HomePage"
             android:exported="true"
             android:allowTaskReparenting="true"
             android:alwaysRetainTaskState="true"
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.myapplication.ui.homePage.activity.webViewActivity.WebViewActivity"
+            android:name="com.example.myapplication.ui.webView.activity.activity.WebViewActivity"
             android:allowTaskReparenting="true"
             android:alwaysRetainTaskState="true"
             android:autoRemoveFromRecents="true"

@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.homePage.fragment.page3
+package com.example.myapplication.ui.page3.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

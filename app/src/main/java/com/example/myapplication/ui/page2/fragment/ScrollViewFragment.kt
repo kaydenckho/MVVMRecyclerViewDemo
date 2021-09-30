@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.homePage.fragment.page2
+package com.example.myapplication.ui.page2.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.ui.general.adapter.ChildRecyclerViewAdapter
-import com.example.myapplication.ui.homePage.model.Data
+import com.example.myapplication.ui.general.model.Data
 
 
 class ScrollViewFragment(mList: ArrayList<Data>, val viewPager: ViewPager2) : Fragment() {

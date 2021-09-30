@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.webkit.WebView
 import androidx.viewpager2.widget.ViewPager2
-import com.example.myapplication.ui.homePage.activity.mainActivity.HomePage
+import com.example.myapplication.ui.homePage.activity.HomePage
 import kotlin.math.abs
 
 class WebViewInViewPager2 : WebView {

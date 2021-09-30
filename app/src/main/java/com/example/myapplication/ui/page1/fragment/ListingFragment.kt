@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.homePage.fragment.page1
+package com.example.myapplication.ui.page1.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.ui.general.adapter.ParentRecyclerViewAdapter
-import com.example.myapplication.ui.homePage.model.Data
+import com.example.myapplication.ui.general.model.Data
 
 
 class ListingFragment(mList: ArrayList<Data>, val viewPager: ViewPager2) : Fragment() {

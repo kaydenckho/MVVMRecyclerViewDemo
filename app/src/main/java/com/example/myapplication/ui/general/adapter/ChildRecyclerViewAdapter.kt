@@ -12,8 +12,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.ui.homePage.model.Data
-import com.example.myapplication.ui.homePage.activity.webViewActivity.WebViewActivity
+import com.example.myapplication.ui.general.model.Data
+import com.example.myapplication.ui.webView.activity.activity.WebViewActivity
 import com.facebook.drawee.view.SimpleDraweeView
 
 class ChildRecyclerViewAdapter(private val mData: ArrayList<Data>) :

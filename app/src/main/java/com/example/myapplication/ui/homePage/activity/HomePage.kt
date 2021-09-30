@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.homePage.activity.mainActivity
+package com.example.myapplication.ui.homePage.activity
 
 import android.app.Activity
 import android.app.PictureInPictureParams
@@ -14,7 +14,8 @@ import androidx.lifecycle.*
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.example.myapplication.ui.homePage.fragment.HomePageFragment
-import com.example.myapplication.ui.homePage.adapter.ViewPagerAdapter
+import com.example.myapplication.ui.general.adapter.ViewPagerAdapter
+import com.example.myapplication.ui.homePage.viewModel.HomePageViewModel
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.facebook.imagepipeline.core.ImageTranscoderType
