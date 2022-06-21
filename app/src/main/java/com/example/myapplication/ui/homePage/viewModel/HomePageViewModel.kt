@@ -20,18 +20,18 @@ class HomePageViewModel(application: Application) : AndroidViewModel(application
 
     val apiRepository: ApiRepository by lazy { ApiRepository() }
 
-    val db by lazy { LocalDatabase(this.getApplication()) }
+//    val db by lazy { LocalDatabase(this.getApplication()) }
 
     val online = isOnline(application.applicationContext)
 
     suspend fun getImageAsync() {
         if (online) {
             apiRepository.getAllData().collect {
-                db.DataDao().insertData(it)
+//                db.DataDao().insertData(it)
                 dataList.value = it as ArrayList<Data>
             }
         } else {
-            dataList.value = db.DataDao().getData() as ArrayList<Data>
+//            dataList.value = db.DataDao().getData() as ArrayList<Data>
         }
     }
 
